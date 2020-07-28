@@ -49,7 +49,7 @@ composer test
 
 ## Security
 
-If you discover any security related issues, please email freek@spatie.be instead of using the issue tracker.
+If you discover any security related issues, please email mail@timothydc.be instead of using the issue tracker.
 
 ## Credits
 
