@@ -3,7 +3,6 @@
 namespace TimothyDC\LightspeedEcomApi;
 
 use Illuminate\Support\Facades\Facade;
-use WebshopappApiClient;
 
 /**
  * @see \TimothyDC\LightspeedEcomApi\Services\LightspeedEcomApi
