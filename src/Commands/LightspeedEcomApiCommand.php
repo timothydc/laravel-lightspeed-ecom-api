@@ -1,10 +1,11 @@
 <?php
 
-namespace TimothyDC\LightpeedEcomApi\Commands;
+namespace TimothyDC\LightspeedEcomApi\Commands;
 
 use Illuminate\Console\Command;
+use TimothyDC\LightspeedEcomApi\LightspeedEcomApi;
 
-class LightpeedEcomApiCommand extends Command
+class LightspeedEcomApiCommand extends Command
 {
     public $signature = 'ecom-api:test';
 
@@ -12,7 +13,7 @@ class LightpeedEcomApiCommand extends Command
 
     public function handle(): int
     {
-        $this->comment('All done');
+        $this->info(LightspeedEcomApi::shop());
 
         return 0;
     }

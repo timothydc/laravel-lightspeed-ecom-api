@@ -1,23 +1,18 @@
 <?php
 
-namespace TimothyDC\LightpeedEcomApi\Tests;
+declare(strict_types=1);
+
+namespace TimothyDC\LightspeedEcomApi\Tests;
 
 use Orchestra\Testbench\TestCase as Orchestra;
-use TimothyDC\LightpeedEcomApi\LightpeedEcomApiServiceProvider;
+use TimothyDC\LightspeedEcomApi\LightspeedEcomApiServiceProvider;
 
 class TestCase extends Orchestra
 {
-    public function setUp(): void
-    {
-        parent::setUp();
-
-        $this->withFactories(__DIR__.'/database/factories');
-    }
-
     protected function getPackageProviders($app)
     {
         return [
-            LightpeedEcomApiServiceProvider::class,
+            LightspeedEcomApiServiceProvider::class,
         ];
     }
 

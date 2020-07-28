@@ -2,7 +2,8 @@
 
 [![Latest Version on Packagist][ico-version]][link-packagist]
 [![Total Downloads][ico-downloads]][link-downloads]
-[![Github Tests Action][ico-github-actions]][link-github-actions]
+[![Github Tests Action Tests][ico-github-actions-tests]][link-github-actions-tests]
+[![Github Tests Action Styling][ico-github-actions-styling]][link-github-actions-styling]
 
 This is where your description should go. Limit it to a paragraph or two. Consider adding a small example.
 
@@ -16,7 +17,7 @@ composer require timothydc/laravel-lightspeed-ecom-api
 
 You can publish the config file with:
 ```bash
-php artisan vendor:publish --provider="TimothyDC\LightpeedEcomApi\LightpeedEcomApiServiceProvider" --tag="config"
+php artisan vendor:publish --provider="TimothyDC\LightspeedEcomApi\LightspeedEcomApiServiceProvider" --tag="config"
 ```
 
 ## Usage
@@ -54,6 +55,7 @@ If you discover any security related issues, please email mail@timothydc.be inst
 ## Credits
 
 - [Timothy De Cort][link-author]
+- [Gunharth][link-gunharth] (https://github.com/gunharth/laravel-lightspeed-api)
 - [All Contributors][link-contributors]
 
 ## License
@@ -62,10 +64,13 @@ The MIT License (MIT). Please see [License File](LICENSE.md) for more informatio
 
 [ico-version]: https://img.shields.io/packagist/v/timothydc/laravel-lightspeed-ecom-api.svg?style=flat-square
 [ico-downloads]: https://img.shields.io/packagist/dt/timothydc/laravel-lightspeed-ecom-api.svg?style=flat-square
-[ico-github-actions]: https://img.shields.io/github/workflow/status/timothydc/laravel-lightspeed-ecom-api/run-tests?label=tests&style=flat-square
+[ico-github-actions-tests]: https://img.shields.io/github/workflow/status/timothydc/laravel-lightspeed-ecom-api/run-tests?label=tests&style=flat-square
+[ico-github-actions-styling]: https://img.shields.io/github/workflow/status/timothydc/laravel-lightspeed-ecom-api/fix-styling?label=styling&style=flat-square
 
 [link-packagist]: https://packagist.org/packages/timothydc/laravel-lightspeed-ecom-api
 [link-downloads]: https://packagist.org/packages/timothydc/laravel-lightspeed-ecom-api
-[link-github-actions]: https://github.com/timothydc/laravel-lightspeed-ecom-api/actions?query=workflow%3Arun-tests+branch%3Amaster
+[link-github-actions-tests]: https://github.com/timothydc/laravel-lightspeed-ecom-api/actions?query=workflow%3Arun-tests+branch%3Amaster
+[link-github-actions-styling]: https://github.com/timothydc/laravel-lightspeed-ecom-api/actions?query=workflow%3Afix-styling+branch%3Amaster
 [link-author]: https://github.com/timothydc
+[link-gunharth]: https://github.com/gunharth
 [link-contributors]: ../../contributors
