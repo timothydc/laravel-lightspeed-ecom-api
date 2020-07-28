@@ -27,19 +27,19 @@ php artisan vendor:publish --provider="TimothyDC\LightspeedEcomApi\LightspeedEco
 LightspeedEcomApi::setApiLanguage('en');
 
 // get products
-LightspeedEcomApi::products->get();
+LightspeedEcomApi::products()->get();
 
 // get single product
-LightspeedEcomApi::products->get(123456789);
+LightspeedEcomApi::products()->get(123456789);
 
 // get filtered products
-LightspeedEcomApi::products->get(null, ['limit' => 250, 'page' => 1, 'since_id' => 123]);
+LightspeedEcomApi::products()->get(null, ['limit' => 250, 'page' => 1, 'since_id' => 123]);
 
 // create product
-LightspeedEcomApi::products->create(['title' => 'my product']);
+LightspeedEcomApi::products()->create(['title' => 'my product']);
 
 // update product
-LightspeedEcomApi::products->update(123456789, ['title' => 'my other product']);
+LightspeedEcomApi::products()->update(123456789, ['title' => 'my other product']);
 ```
 
 ## Testing
