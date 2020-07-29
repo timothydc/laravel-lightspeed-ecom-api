@@ -13,7 +13,7 @@ class LightspeedEcomApiCommand extends Command
 
     public function handle(): int
     {
-        $this->info(LightspeedEcomApi::shop());
+        $this->info(json_encode(LightspeedEcomApi::account()->get()));
 
         return 0;
     }
