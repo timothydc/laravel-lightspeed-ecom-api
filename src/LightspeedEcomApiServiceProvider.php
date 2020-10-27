@@ -30,11 +30,11 @@ class LightspeedEcomApiServiceProvider extends ServiceProvider
         $this->app->singleton(
             WebshopappApiClient::class,
             fn ($app) => new WebshopappApiClient(
-            $app['config']['lightspeed-ecom-api']['cluster'],
-            $app['config']['lightspeed-ecom-api']['key'],
-            $app['config']['lightspeed-ecom-api']['secret'],
-            $app['config']['lightspeed-ecom-api']['language']
-        )
+                $app['config']['lightspeed-ecom-api']['cluster'],
+                $app['config']['lightspeed-ecom-api']['key'],
+                $app['config']['lightspeed-ecom-api']['secret'],
+                $app['config']['lightspeed-ecom-api']['language']
+            )
         );
 
         $this->app->singleton(EcomApi::class, fn ($app) => new EcomApi($app->make(WebshopappApiClient::class)));
