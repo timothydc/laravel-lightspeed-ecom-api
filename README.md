@@ -15,16 +15,23 @@ Via Composer:
 composer require timothydc/laravel-lightspeed-ecom-api
 ```
 
+## Configuration
+
 You can publish the config file with:
 ```bash
-php artisan vendor:publish --provider="TimothyDC\LightspeedEcomApi\LightspeedEcomApiServiceProvider" --tag="config"
+php artisan vendor:publish --tag=lightspeed-ecom-api:config 
 ```
 
 ## Usage
 
+Interaction works the same as the Lightspeed API.
+
 ``` php
 // change API language
 LightspeedEcomApi::setApiLanguage('en');
+
+// change API key and secret
+LightspeedEcomApi::setCredentials('key', 'secret');
 
 // get products
 LightspeedEcomApi::products()->get();
