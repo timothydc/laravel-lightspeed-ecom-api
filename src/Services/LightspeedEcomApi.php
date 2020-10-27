@@ -109,543 +109,552 @@ use WebshopappApiResourceVariantsMetafields;
 use WebshopappApiResourceVariantsMovements;
 use WebshopappApiResourceWebhooks;
 
-class LightspeedEcomApi extends WebshopappApiClient
+class LightspeedEcomApi
 {
-    public function __construct(array $configuration)
+    protected ?WebshopappApiClient $api = null;
+
+    public function __construct(WebshopappApiClient $apiClient)
     {
-        parent::__construct($configuration['cluster'], $configuration['key'], $configuration['secret'], $configuration['language']);
+        $this->api = $apiClient;
     }
 
     public function setCredentials(string $key, string $secret): self
     {
-        $this->setApiKey($key);
-        $this->setApiSecret($secret);
+        $this->api->setApiKey($key);
+        $this->api->setApiSecret($secret);
+
+        return $this;
+    }
+
+    public function setLanguage(string $language): self
+    {
+        $this->api->setApiLanguage($language);
 
         return $this;
     }
 
     public function account(): WebshopappApiResourceAccount
     {
-        return $this->account;
+        return $this->api->account;
     }
 
     public function accountMetafields(): WebshopappApiResourceAccountMetafields
     {
-        return $this->accountMetafields;
+        return $this->api->accountMetafields;
     }
 
     public function accountPermissions(): WebshopappApiResourceAccountPermissions
     {
-        return $this->accountPermissions;
+        return $this->api->accountPermissions;
     }
 
     public function accountRatelimit(): WebshopappApiResourceAccountRatelimit
     {
-        return $this->accountRatelimit;
+        return $this->api->accountRatelimit;
     }
 
     public function additionalcosts(): WebshopappApiResourceAdditionalcosts
     {
-        return $this->additionalcosts;
+        return $this->api->additionalcosts;
     }
 
     public function attributes(): WebshopappApiResourceAttributes
     {
-        return $this->attributes;
+        return $this->api->attributes;
     }
 
     public function blogs(): WebshopappApiResourceBlogs
     {
-        return $this->blogs;
+        return $this->api->blogs;
     }
 
     public function blogsArticles(): WebshopappApiResourceBlogsArticles
     {
-        return $this->blogsArticles;
+        return $this->api->blogsArticles;
     }
 
     public function blogsArticlesImage(): WebshopappApiResourceBlogsArticlesImage
     {
-        return $this->blogsArticlesImage;
+        return $this->api->blogsArticlesImage;
     }
 
     public function blogsArticlesTags(): WebshopappApiResourceBlogsArticlesTags
     {
-        return $this->blogsArticlesTags;
+        return $this->api->blogsArticlesTags;
     }
 
     public function blogsComments(): WebshopappApiResourceBlogsComments
     {
-        return $this->blogsComments;
+        return $this->api->blogsComments;
     }
 
     public function blogsTags(): WebshopappApiResourceBlogsTags
     {
-        return $this->blogsTags;
+        return $this->api->blogsTags;
     }
 
     public function brands(): WebshopappApiResourceBrands
     {
-        return $this->brands;
+        return $this->api->brands;
     }
 
     public function brandsImage(): WebshopappApiResourceBrandsImage
     {
-        return $this->brandsImage;
+        return $this->api->brandsImage;
     }
 
     public function catalog(): WebshopappApiResourceCatalog
     {
-        return $this->catalog;
+        return $this->api->catalog;
     }
 
     public function categories(): WebshopappApiResourceCategories
     {
-        return $this->categories;
+        return $this->api->categories;
     }
 
     public function categoriesImage(): WebshopappApiResourceCategoriesImage
     {
-        return $this->categoriesImage;
+        return $this->api->categoriesImage;
     }
 
     public function categoriesProducts(): WebshopappApiResourceCategoriesProducts
     {
-        return $this->categoriesProducts;
+        return $this->api->categoriesProducts;
     }
 
     public function categoriesProductsBulk(): WebshopappApiResourceCategoriesProductsBulk
     {
-        return $this->categoriesProductsBulk;
+        return $this->api->categoriesProductsBulk;
     }
 
     public function checkouts(): WebshopappApiResourceCheckouts
     {
-        return $this->checkouts;
+        return $this->api->checkouts;
     }
 
     public function checkoutsOrder(): WebshopappApiResourceCheckoutsOrder
     {
-        return $this->checkoutsOrder;
+        return $this->api->checkoutsOrder;
     }
 
     public function checkoutsPayment_methods(): WebshopappApiResourceCheckoutsPayment_methods
     {
-        return $this->checkoutsPayment_methods;
+        return $this->api->checkoutsPayment_methods;
     }
 
     public function checkoutsProducts(): WebshopappApiResourceCheckoutsProducts
     {
-        return $this->checkoutsProducts;
+        return $this->api->checkoutsProducts;
     }
 
     public function checkoutsShipment_methods(): WebshopappApiResourceCheckoutsShipment_methods
     {
-        return $this->checkoutsShipment_methods;
+        return $this->api->checkoutsShipment_methods;
     }
 
     public function checkoutsValidate(): WebshopappApiResourceCheckoutsValidate
     {
-        return $this->checkoutsValidate;
+        return $this->api->checkoutsValidate;
     }
 
     public function contacts(): WebshopappApiResourceContacts
     {
-        return $this->contacts;
+        return $this->api->contacts;
     }
 
     public function countries(): WebshopappApiResourceCountries
     {
-        return $this->countries;
+        return $this->api->countries;
     }
 
     public function customers(): WebshopappApiResourceCustomers
     {
-        return $this->customers;
+        return $this->api->customers;
     }
 
     public function customersLogin(): WebshopappApiResourceCustomersLogin
     {
-        return $this->customersLogin;
+        return $this->api->customersLogin;
     }
 
     public function customersMetafields(): WebshopappApiResourceCustomersMetafields
     {
-        return $this->customersMetafields;
+        return $this->api->customersMetafields;
     }
 
     public function customersTokens(): WebshopappApiResourceCustomersTokens
     {
-        return $this->customersTokens;
+        return $this->api->customersTokens;
     }
 
     public function dashboard(): WebshopappApiResourceDashboard
     {
-        return $this->dashboard;
+        return $this->api->dashboard;
     }
 
     public function deliverydates(): WebshopappApiResourceDeliverydates
     {
-        return $this->deliverydates;
+        return $this->api->deliverydates;
     }
 
     public function discountrules(): WebshopappApiResourceDiscountrules
     {
-        return $this->discountrules;
+        return $this->api->discountrules;
     }
 
     public function discounts(): WebshopappApiResourceDiscounts
     {
-        return $this->discounts;
+        return $this->api->discounts;
     }
 
     public function events(): WebshopappApiResourceEvents
     {
-        return $this->events;
+        return $this->api->events;
     }
 
     public function external_services(): WebshopappApiResourceExternal_services
     {
-        return $this->external_services;
+        return $this->api->external_services;
     }
 
     public function files(): WebshopappApiResourceFiles
     {
-        return $this->files;
+        return $this->api->files;
     }
 
     public function filters(): WebshopappApiResourceFilters
     {
-        return $this->filters;
+        return $this->api->filters;
     }
 
     public function filtersValues(): WebshopappApiResourceFiltersValues
     {
-        return $this->filtersValues;
+        return $this->api->filtersValues;
     }
 
     public function groups(): WebshopappApiResourceGroups
     {
-        return $this->groups;
+        return $this->api->groups;
     }
 
     public function groupsCustomers(): WebshopappApiResourceGroupsCustomers
     {
-        return $this->groupsCustomers;
+        return $this->api->groupsCustomers;
     }
 
     public function invoices(): WebshopappApiResourceInvoices
     {
-        return $this->invoices;
+        return $this->api->invoices;
     }
 
     public function invoicesItems(): WebshopappApiResourceInvoicesItems
     {
-        return $this->invoicesItems;
+        return $this->api->invoicesItems;
     }
 
     public function invoicesMetafields(): WebshopappApiResourceInvoicesMetafields
     {
-        return $this->invoicesMetafields;
+        return $this->api->invoicesMetafields;
     }
 
     public function languages(): WebshopappApiResourceLanguages
     {
-        return $this->languages;
+        return $this->api->languages;
     }
 
     public function locations(): WebshopappApiResourceLocations
     {
-        return $this->locations;
+        return $this->api->locations;
     }
 
     public function metafields(): WebshopappApiResourceMetafields
     {
-        return $this->metafields;
+        return $this->api->metafields;
     }
 
     public function orders(): WebshopappApiResourceOrders
     {
-        return $this->orders;
+        return $this->api->orders;
     }
 
     public function ordersCredit(): WebshopappApiResourceOrdersCredit
     {
-        return $this->ordersCredit;
+        return $this->api->ordersCredit;
     }
 
     public function ordersMetafields(): WebshopappApiResourceOrdersMetafields
     {
-        return $this->ordersMetafields;
+        return $this->api->ordersMetafields;
     }
 
     public function ordersProducts(): WebshopappApiResourceOrdersProducts
     {
-        return $this->ordersProducts;
+        return $this->api->ordersProducts;
     }
 
     public function ordersCustomstatuses(): WebshopappApiResourceOrdersCustomstatuses
     {
-        return $this->ordersCustomstatuses;
+        return $this->api->ordersCustomstatuses;
     }
 
     public function ordersEvents(): WebshopappApiResourceOrdersEvents
     {
-        return $this->ordersEvents;
+        return $this->api->ordersEvents;
     }
 
     public function paymentmethods(): WebshopappApiResourcePaymentmethods
     {
-        return $this->paymentmethods;
+        return $this->api->paymentmethods;
     }
 
     public function products(): WebshopappApiResourceProducts
     {
-        return $this->products;
+        return $this->api->products;
     }
 
     public function productsAttributes(): WebshopappApiResourceProductsAttributes
     {
-        return $this->productsAttributes;
+        return $this->api->productsAttributes;
     }
 
     public function productsFiltervalues(): WebshopappApiResourceProductsFiltervalues
     {
-        return $this->productsFiltervalues;
+        return $this->api->productsFiltervalues;
     }
 
     public function productsImages(): WebshopappApiResourceProductsImages
     {
-        return $this->productsImages;
+        return $this->api->productsImages;
     }
 
     public function productsMetafields(): WebshopappApiResourceProductsMetafields
     {
-        return $this->productsMetafields;
+        return $this->api->productsMetafields;
     }
 
     public function productsRelations(): WebshopappApiResourceProductsRelations
     {
-        return $this->productsRelations;
+        return $this->api->productsRelations;
     }
 
     public function quotes(): WebshopappApiResourceQuotes
     {
-        return $this->quotes;
+        return $this->api->quotes;
     }
 
     public function quotesConvert(): WebshopappApiResourceQuotesConvert
     {
-        return $this->quotesConvert;
+        return $this->api->quotesConvert;
     }
 
     public function quotesPaymentmethods(): WebshopappApiResourceQuotesPaymentmethods
     {
-        return $this->quotesPaymentmethods;
+        return $this->api->quotesPaymentmethods;
     }
 
     public function quotesProducts(): WebshopappApiResourceQuotesProducts
     {
-        return $this->quotesProducts;
+        return $this->api->quotesProducts;
     }
 
     public function quotesShippingmethods(): WebshopappApiResourceQuotesShippingmethods
     {
-        return $this->quotesShippingmethods;
+        return $this->api->quotesShippingmethods;
     }
 
     public function redirects(): WebshopappApiResourceRedirects
     {
-        return $this->redirects;
+        return $this->api->redirects;
     }
 
     public function returns(): WebshopappApiResourceReturns
     {
-        return $this->returns;
+        return $this->api->returns;
     }
 
     public function reviews(): WebshopappApiResourceReviews
     {
-        return $this->reviews;
+        return $this->api->reviews;
     }
 
     public function sets(): WebshopappApiResourceSets
     {
-        return $this->sets;
+        return $this->api->sets;
     }
 
     public function shipments(): WebshopappApiResourceShipments
     {
-        return $this->shipments;
+        return $this->api->shipments;
     }
 
     public function shipmentsMetafields(): WebshopappApiResourceShipmentsMetafields
     {
-        return $this->shipmentsMetafields;
+        return $this->api->shipmentsMetafields;
     }
 
     public function shipmentsProducts(): WebshopappApiResourceShipmentsProducts
     {
-        return $this->shipmentsProducts;
+        return $this->api->shipmentsProducts;
     }
 
     public function shippingmethods(): WebshopappApiResourceShippingmethods
     {
-        return $this->shippingmethods;
+        return $this->api->shippingmethods;
     }
 
     public function shippingmethodsCountries(): WebshopappApiResourceShippingmethodsCountries
     {
-        return $this->shippingmethodsCountries;
+        return $this->api->shippingmethodsCountries;
     }
 
     public function shippingmethodsValues(): WebshopappApiResourceShippingmethodsValues
     {
-        return $this->shippingmethodsValues;
+        return $this->api->shippingmethodsValues;
     }
 
     public function shop(): WebshopappApiResourceShop
     {
-        return $this->shop;
+        return $this->api->shop;
     }
 
     public function shopCompany(): WebshopappApiResourceShopCompany
     {
-        return $this->shopCompany;
+        return $this->api->shopCompany;
     }
 
     public function shopJavascript(): WebshopappApiResourceShopJavascript
     {
-        return $this->shopJavascript;
+        return $this->api->shopJavascript;
     }
 
     public function shopLimits(): WebshopappApiResourceShopLimits
     {
-        return $this->shopLimits;
+        return $this->api->shopLimits;
     }
 
     public function shopMetafields(): WebshopappApiResourceShopMetafields
     {
-        return $this->shopMetafields;
+        return $this->api->shopMetafields;
     }
 
     public function shopScripts(): WebshopappApiResourceShopScripts
     {
-        return $this->shopScripts;
+        return $this->api->shopScripts;
     }
 
     public function shopSettings(): WebshopappApiResourceShopSettings
     {
-        return $this->shopSettings;
+        return $this->api->shopSettings;
     }
 
     public function shopTracking(): WebshopappApiResourceShopTracking
     {
-        return $this->shopTracking;
+        return $this->api->shopTracking;
     }
 
     public function shopWebsite(): WebshopappApiResourceShopWebsite
     {
-        return $this->shopWebsite;
+        return $this->api->shopWebsite;
     }
 
     public function subscriptions(): WebshopappApiResourceSubscriptions
     {
-        return $this->subscriptions;
+        return $this->api->subscriptions;
     }
 
     public function suppliers(): WebshopappApiResourceSuppliers
     {
-        return $this->suppliers;
+        return $this->api->suppliers;
     }
 
     public function tags(): WebshopappApiResourceTags
     {
-        return $this->tags;
+        return $this->api->tags;
     }
 
     public function tagsProducts(): WebshopappApiResourceTagsProducts
     {
-        return $this->tagsProducts;
+        return $this->api->tagsProducts;
     }
 
     public function taxes(): WebshopappApiResourceTaxes
     {
-        return $this->taxes;
+        return $this->api->taxes;
     }
 
     public function taxesOverrides(): WebshopappApiResourceTaxesOverrides
     {
-        return $this->taxesOverrides;
+        return $this->api->taxesOverrides;
     }
 
     public function textpages(): WebshopappApiResourceTextpages
     {
-        return $this->textpages;
+        return $this->api->textpages;
     }
 
     public function themeCategories(): WebshopappApiResourceThemeCategories
     {
-        return $this->themeCategories;
+        return $this->api->themeCategories;
     }
 
     public function themeProducts(): WebshopappApiResourceThemeProducts
     {
-        return $this->themeProducts;
+        return $this->api->themeProducts;
     }
 
     public function tickets(): WebshopappApiResourceTickets
     {
-        return $this->tickets;
+        return $this->api->tickets;
     }
 
     public function ticketsMessages(): WebshopappApiResourceTicketsMessages
     {
-        return $this->ticketsMessages;
+        return $this->api->ticketsMessages;
     }
 
     public function time(): WebshopappApiResourceTime
     {
-        return $this->time;
+        return $this->api->time;
     }
 
     public function types(): WebshopappApiResourceTypes
     {
-        return $this->types;
+        return $this->api->types;
     }
 
     public function typesAttributes(): WebshopappApiResourceTypesAttributes
     {
-        return $this->typesAttributes;
+        return $this->api->typesAttributes;
     }
 
     public function variants(): WebshopappApiResourceVariants
     {
-        return $this->variants;
+        return $this->api->variants;
     }
 
     public function variantsImage(): WebshopappApiResourceVariantsImage
     {
-        return $this->variantsImage;
+        return $this->api->variantsImage;
     }
 
     public function variantsMetafields(): WebshopappApiResourceVariantsMetafields
     {
-        return $this->variantsMetafields;
+        return $this->api->variantsMetafields;
     }
 
     public function variantsBulk(): WebshopappApiResourceVariantsBulk
     {
-        return $this->variantsBulk;
+        return $this->api->variantsBulk;
     }
 
     public function variantsMovements(): WebshopappApiResourceVariantsMovements
     {
-        return $this->variantsMovements;
+        return $this->api->variantsMovements;
     }
 
     public function webhooks(): WebshopappApiResourceWebhooks
     {
-        return $this->webhooks;
+        return $this->api->webhooks;
     }
 }
