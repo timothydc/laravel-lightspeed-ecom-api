@@ -17,6 +17,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - All the things
 
-[Unreleased]: https://github.com/timothydc/laravel-lightspeed-ecom-product-feeds/compare/v1.1.0...HEAD
-[v1.1.0]: https://github.com/timothydc/laravel-lightspeed-ecom-product-feeds/compare/v1.0.0...v1.1.0
-[v1.0.0]: https://github.com/timothydc/laravel-lightspeed-ecom-product-feeds/releases/tag/v1.0.0
+[Unreleased]: https://github.com/timothydc/laravel-lightspeed-ecom-api/compare/v1.1.0...HEAD
+[v1.1.0]: https://github.com/timothydc/laravel-lightspeed-ecom-api/compare/v1.0.0...v1.1.0
+[v1.0.0]: https://github.com/timothydc/laravel-lightspeed-ecom-api/releases/tag/v1.0.0
