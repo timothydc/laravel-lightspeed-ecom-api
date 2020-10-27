@@ -217,6 +217,7 @@ use WebshopappApiResourceWebhooks;
  * @method static WebshopappApiResourceVariantsMovements variantsMovements()
  * @method static WebshopappApiResourceWebhooks webhook()
  * @method static LightspeedEcomApi setCredentials(string $key, string $secret)
+ * @method static LightspeedEcomApi setLanguage(string $language)
  */
 class LightspeedEcomApi extends Facade
 {
