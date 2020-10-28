@@ -5,7 +5,7 @@ namespace TimothyDC\LightspeedEcomApi;
 use Illuminate\Support\ServiceProvider;
 use TimothyDC\LightspeedEcomApi\Commands\LightspeedEcomApiCommand;
 use TimothyDC\LightspeedEcomApi\Services\LightspeedEcomApi as EcomApi;
-use WebshopappApiClient;
+use TimothyDC\LightspeedEcomApi\Services\WebshopappApiClient;
 
 class LightspeedEcomApiServiceProvider extends ServiceProvider
 {
