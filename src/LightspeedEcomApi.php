@@ -219,7 +219,7 @@ use WebshopappApiResourceWebhooks;
  * @method static LightspeedEcomApi setCredentials(string $key, string $secret)
  * @method static LightspeedEcomApi setLanguage(string $language)
  * @method static int getMaxCalls()
- * @method static int getRemainingCalls()
+ * @method static int getRemainingCalls(bool $fromCache = true)
  * @method static int getResetTime()
  * @method static int getCallsMade()
  */
