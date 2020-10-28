@@ -2,7 +2,6 @@
 
 namespace TimothyDC\LightspeedEcomApi\Services;
 
-use WebshopappApiClient;
 use WebshopappApiResourceAccount;
 use WebshopappApiResourceAccountMetafields;
 use WebshopappApiResourceAccountPermissions;
@@ -131,6 +130,30 @@ class LightspeedEcomApi
         $this->api->setApiLanguage($language);
 
         return $this;
+    }
+
+    public function getMaxCalls(): int
+    {
+        return $this->api->getMaxCalls();
+    }
+
+    public function getRemainingCalls(bool $fromCache = true): int
+    {
+        if ($fromCache === true && config('lightspeed-ecom-api.save_remaining_calls_to_cache') === true) {
+            return cache()->get('ls_ecom_api_' . $this->api->getApiKey(), null);
+        }
+
+        return $this->api->getRemainingCalls();
+    }
+
+    public function getResetTime(): int
+    {
+        return $this->api->getResetTime();
+    }
+
+    public function getCallsMade(): int
+    {
+        return $this->api->getApiCallsMade();
     }
 
     public function account(): WebshopappApiResourceAccount

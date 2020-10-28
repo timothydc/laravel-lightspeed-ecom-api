@@ -6,8 +6,8 @@ namespace TimothyDC\LightspeedEcomApi\Tests\Unit;
 
 use Illuminate\Support\Facades\App;
 use TimothyDC\LightspeedEcomApi\LightspeedEcomApi;
+use TimothyDC\LightspeedEcomApi\Services\WebshopappApiClient;
 use TimothyDC\LightspeedEcomApi\Tests\TestCase;
-use WebshopappApiClient;
 use WebshopappApiException;
 use WebshopappApiResourceAccount;
 
