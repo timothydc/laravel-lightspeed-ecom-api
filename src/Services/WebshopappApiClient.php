@@ -45,18 +45,21 @@ class WebshopappApiClient extends \WebshopappApiClient
     public function getMaxCalls(): int
     {
         [$fiveMinutes] = explode('/', $this->getResponseHeaders()['x-ratelimit-limit'] ?? '300/3000/12000');
+
         return (int)$fiveMinutes;
     }
 
     public function getRemainingCalls(): int
     {
         [$fiveMinutes] = explode('/', $this->getResponseHeaders()['x-ratelimit-remaining'] ?? '300/3000/12000');
+
         return (int)$fiveMinutes;
     }
 
     public function getResetTime(): int
     {
         [$fiveMinutes] = explode('/', $this->getResponseHeaders()['x-ratelimit-reset'] ?? '300/3000/12000');
+
         return (int)$fiveMinutes;
     }
 

@@ -24,6 +24,7 @@ class LightspeedEcomApiCommand extends Command
         dump(LightspeedEcomApi::getRemainingCalls());
         dump(LightspeedEcomApi::getResetTime());
         dump(LightspeedEcomApi::getCallsMade());
+
         return 0;
     }
 }
