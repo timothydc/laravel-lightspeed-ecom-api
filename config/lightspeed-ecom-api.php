@@ -23,4 +23,6 @@ return [
      * Possible options can be found via the "settings/internationalization" menu in your webshop backoffice.
      */
     'language' => 'en',
+
+    'save_remaining_calls_to_cache' => env('LS_ECOM_API_SAVE_CALLS_TO_CACHE', true)
 ];
