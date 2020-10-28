@@ -26,13 +26,33 @@ php artisan vendor:publish --tag=lightspeed-ecom-api:config
 
 Interaction works the same as the Lightspeed API.
 
+
+#### Authentication
 ``` php
 // change API language
 LightspeedEcomApi::setApiLanguage('en');
 
 // change API key and secret
 LightspeedEcomApi::setCredentials('key', 'secret');
+```
 
+#### Rate limits
+``` php
+// get max calls for your API keys
+LightspeedEcomApi::getMaxCalls();
+
+// get seconds until next reset
+LightspeedEcomApi::getResetTime();
+
+// get available API limits - from the cache (when set so in the config)
+LightspeedEcomApi::getRemainingCalls();
+
+// get available API limits - directly from the last API call header
+LightspeedEcomApi::getRemainingCalls(false);
+```
+
+#### Calling resources
+``` php
 // get products
 LightspeedEcomApi::products()->get();
 
