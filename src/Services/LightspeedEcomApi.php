@@ -3,6 +3,7 @@
 namespace TimothyDC\LightspeedEcomApi\Services;
 
 use Illuminate\Support\Carbon;
+
 use WebshopappApiResourceAccount;
 use WebshopappApiResourceAccountMetafields;
 use WebshopappApiResourceAccountPermissions;
