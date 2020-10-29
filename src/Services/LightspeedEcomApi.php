@@ -2,6 +2,8 @@
 
 namespace TimothyDC\LightspeedEcomApi\Services;
 
+use Illuminate\Support\Carbon;
+
 use WebshopappApiResourceAccount;
 use WebshopappApiResourceAccountMetafields;
 use WebshopappApiResourceAccountPermissions;
@@ -140,15 +142,19 @@ class LightspeedEcomApi
     public function getRemainingCalls(bool $fromCache = true): int
     {
         if ($fromCache === true && config('lightspeed-ecom-api.save_remaining_calls_to_cache') === true) {
-            return cache()->get('ls_ecom_api_' . $this->api->getApiKey(), null);
+            return cache()->get('ls_ecom_api_remaining_' . $this->api->getApiKey(), 300);
         }
 
         return $this->api->getRemainingCalls();
     }
 
-    public function getResetTime(): int
+    public function getResetTime(bool $fromCache = true): Carbon
     {
-        return $this->api->getResetTime();
+        if ($fromCache === true && config('lightspeed-ecom-api.save_remaining_calls_to_cache') === true) {
+            return cache()->get('ls_ecom_api_reset_' . $this->api->getApiKey(), Carbon::now());
+        }
+
+        return Carbon::now()->addSeconds($this->api->getResetTime());
     }
 
     public function getCallsMade(): int

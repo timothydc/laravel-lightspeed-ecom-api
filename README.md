@@ -26,13 +26,40 @@ php artisan vendor:publish --tag=lightspeed-ecom-api:config
 
 Interaction works the same as the Lightspeed API.
 
+
+#### Authentication
 ``` php
 // change API language
 LightspeedEcomApi::setApiLanguage('en');
 
 // change API key and secret
 LightspeedEcomApi::setCredentials('key', 'secret');
+```
 
+#### Rate limits
+
+By default, each API key caches its remaining calls and next reset time.
+If you would like to disable this behavior, deactive this feature by setting `save_remaining_calls_to_cache` to `false` in `config/lightspeed-ecom-api.php`.
+
+``` php
+// get max calls for your API keys
+LightspeedEcomApi::getMaxCalls();
+
+// get Carbon with next reset time - from the cache
+LightspeedEcomApi::getResetTime();
+
+// get Carbon with next reset time - from the last API response header
+LightspeedEcomApi::getResetTime(false);
+
+// get available API limits - from the cache
+LightspeedEcomApi::getRemainingCalls();
+
+// get available API limits - from the last API response header
+LightspeedEcomApi::getRemainingCalls(false);
+```
+
+#### Calling resources
+``` php
 // get products
 LightspeedEcomApi::products()->get();
 
