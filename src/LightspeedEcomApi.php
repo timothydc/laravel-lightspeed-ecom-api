@@ -2,6 +2,7 @@
 
 namespace TimothyDC\LightspeedEcomApi;
 
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Facade;
 use WebshopappApiResourceAccount;
 use WebshopappApiResourceAccountMetafields;
@@ -220,7 +221,7 @@ use WebshopappApiResourceWebhooks;
  * @method static LightspeedEcomApi setLanguage(string $language)
  * @method static int getMaxCalls()
  * @method static int getRemainingCalls(bool $fromCache = true)
- * @method static int getResetTime()
+ * @method static Carbon getResetTime(bool $fromCache = true)
  * @method static int getCallsMade()
  */
 class LightspeedEcomApi extends Facade
