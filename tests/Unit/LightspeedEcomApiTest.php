@@ -97,5 +97,4 @@ class LightspeedEcomApiTest extends TestCase
         $this->assertEquals($resetTime, LightspeedEcomApi::getResetTime());
         $this->assertEquals(Carbon::now()->addSeconds(300)->format('Y-m-d H:i:s'), LightspeedEcomApi::getResetTime(false)->format('Y-m-d H:i:s'));
     }
-
 }
