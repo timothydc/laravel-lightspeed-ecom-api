@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace TimothyDC\LightspeedEcomApi\Tests\Unit;
 
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\App;
 use TimothyDC\LightspeedEcomApi\LightspeedEcomApi;
 use TimothyDC\LightspeedEcomApi\Services\WebshopappApiClient;
@@ -73,4 +74,28 @@ class LightspeedEcomApiTest extends TestCase
             ->once();
         LightspeedEcomApi::shop()->get();
     }
+
+    public function test_it_can_get_remaining_api_calls(): void
+    {
+        $apiKey = 'abcdefghijklmnopqrstuvwxyz012345';
+        config()->set('lightspeed-ecom-api.key', $apiKey);
+
+        cache()->set('ls_ecom_api_remaining_' . $apiKey, 123);
+
+        $this->assertEquals(123, LightspeedEcomApi::getRemainingCalls());
+        $this->assertEquals(300, LightspeedEcomApi::getRemainingCalls(false));
+    }
+
+    public function test_it_can_get_api_calls_reset_time(): void
+    {
+        $apiKey = 'abcdefghijklmnopqrstuvwxyz012345';
+        config()->set('lightspeed-ecom-api.key', $apiKey);
+
+        $resetTime = now()->subSeconds(60);
+        cache()->set('ls_ecom_api_reset_' . $apiKey, $resetTime);
+
+        $this->assertEquals($resetTime, LightspeedEcomApi::getResetTime());
+        $this->assertEquals(Carbon::now()->addSeconds(300)->format('Y-m-d H:i:s'), LightspeedEcomApi::getResetTime(false)->format('Y-m-d H:i:s'));
+    }
+
 }
