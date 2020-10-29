@@ -37,17 +37,24 @@ LightspeedEcomApi::setCredentials('key', 'secret');
 ```
 
 #### Rate limits
+
+By default, each API key caches its remaining calls and next reset time.
+If you would like to disable this behavior, deactive this feature by setting `save_remaining_calls_to_cache` to `false` in `config/lightspeed-ecom-api.php`.
+
 ``` php
 // get max calls for your API keys
 LightspeedEcomApi::getMaxCalls();
 
-// get seconds until next reset
+// get Carbon with next reset time - from the cache
 LightspeedEcomApi::getResetTime();
 
-// get available API limits - from the cache (when set so in the config)
+// get Carbon with next reset time - from the last API response header
+LightspeedEcomApi::getResetTime(false);
+
+// get available API limits - from the cache
 LightspeedEcomApi::getRemainingCalls();
 
-// get available API limits - directly from the last API call header
+// get available API limits - from the last API response header
 LightspeedEcomApi::getRemainingCalls(false);
 ```
 
