@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace TimothyDC\LightspeedEcomApi\Services;
 
+use Illuminate\Support\Carbon;
+
 class WebshopappApiClient extends \WebshopappApiClient
 {
     public function create($url, $payload, $options = []): array
@@ -66,7 +68,8 @@ class WebshopappApiClient extends \WebshopappApiClient
     protected function cacheCalls(): void
     {
         if (config('lightspeed-ecom-api.save_remaining_calls_to_cache') === true) {
-            cache()->set('ls_ecom_api_' . $this->getApiKey(), $this->getRemainingCalls());
+            cache()->set('ls_ecom_api_remaining_' . $this->getApiKey(), $this->getRemainingCalls());
+            cache()->set('ls_ecom_api_reset_' . $this->getApiKey(), Carbon::now()->addSeconds($this->getResetTime()));
         }
     }
 }
