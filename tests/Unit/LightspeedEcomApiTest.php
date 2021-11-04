@@ -33,13 +33,8 @@ class LightspeedEcomApiTest extends TestCase
         config()->set('lightspeed-ecom-api.secret', 'abcdefghijklmnopqrstuvwxyz012345');
         config()->set('lightspeed-ecom-api.language', '');
 
-        $this->withExceptionHandling();
         $this->expectException(WebshopappApiException::class);
         $this->expectExceptionMessage('Invalid API language.');
-
-        LightspeedEcomApi::shouldReceive('account')
-            ->andReturns(new WebshopappApiResourceAccount(App::make(WebshopappApiClient::class)))
-            ->once();
 
         LightspeedEcomApi::account()->get();
     }
@@ -52,11 +47,6 @@ class LightspeedEcomApiTest extends TestCase
 
         $this->expectException(WebshopappApiException::class);
         $this->expectExceptionMessage('Could not authenticate you.');
-        $this->withExceptionHandling();
-
-        LightspeedEcomApi::shouldReceive('account')
-            ->andReturns(new WebshopappApiResourceAccount(App::make(WebshopappApiClient::class)))
-            ->once();
 
         LightspeedEcomApi::account()->get();
     }
