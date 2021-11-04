@@ -4,9 +4,7 @@ declare(strict_types=1);
 
 namespace TimothyDC\LightspeedEcomApi\Tests\Unit;
 
-use ErrorException;
 use Illuminate\Support\Carbon;
-use Illuminate\Support\Facades\App;
 use TimothyDC\LightspeedEcomApi\LightspeedEcomApi;
 use TimothyDC\LightspeedEcomApi\Services\WebshopappApiClient;
 use TimothyDC\LightspeedEcomApi\Tests\TestCase;
