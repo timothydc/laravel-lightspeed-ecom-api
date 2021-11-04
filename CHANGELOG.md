@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [v1.3.0] - 2021-11-04
+### Added
+- Support PHP 8.0
+
 ## [v1.2.0] - 2020-10-29
 ### Added
 - Option to get remaining API calls
@@ -22,7 +26,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - All the things
 
-[Unreleased]: https://github.com/timothydc/laravel-lightspeed-ecom-api/compare/v1.2.0...HEAD
+[Unreleased]: https://github.com/timothydc/laravel-lightspeed-ecom-api/compare/v1.3.0...HEAD
+[v1.3.0]: https://github.com/timothydc/laravel-lightspeed-ecom-api/compare/v1.2.0...v1.3.0
 [v1.2.0]: https://github.com/timothydc/laravel-lightspeed-ecom-api/compare/v1.1.0...v1.2.0
 [v1.1.0]: https://github.com/timothydc/laravel-lightspeed-ecom-api/compare/v1.0.0...v1.1.0
 [v1.0.0]: https://github.com/timothydc/laravel-lightspeed-ecom-api/releases/tag/v1.0.0
