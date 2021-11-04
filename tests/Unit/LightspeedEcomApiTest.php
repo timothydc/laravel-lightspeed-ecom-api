@@ -25,10 +25,6 @@ class LightspeedEcomApiTest extends TestCase
         $this->expectException(ErrorException::class);
         $this->expectExceptionMessage('Invalid login credentials.');
 
-        LightspeedEcomApi::shouldReceive('account')
-            ->andReturns(new WebshopappApiResourceAccount(App::make(WebshopappApiClient::class)))
-            ->once();
-
         LightspeedEcomApi::account()->get();
     }
 
