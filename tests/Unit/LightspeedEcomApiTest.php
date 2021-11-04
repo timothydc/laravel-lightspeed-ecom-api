@@ -20,9 +20,8 @@ class LightspeedEcomApiTest extends TestCase
     {
         config()->set('lightspeed-ecom-api.key', '');
         config()->set('lightspeed-ecom-api.secret', '');
-        config()->set('lightspeed-ecom-api.language', '');
 
-        $this->expectException(ErrorException::class);
+        $this->expectException(WebshopappApiException::class);
         $this->expectExceptionMessage('Invalid login credentials.');
 
         LightspeedEcomApi::account()->get();
