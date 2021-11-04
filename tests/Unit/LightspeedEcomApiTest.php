@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace TimothyDC\LightspeedEcomApi\Tests\Unit;
 
+use ErrorException;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\App;
 use TimothyDC\LightspeedEcomApi\LightspeedEcomApi;
@@ -21,8 +22,7 @@ class LightspeedEcomApiTest extends TestCase
         config()->set('lightspeed-ecom-api.secret', '');
         config()->set('lightspeed-ecom-api.language', '');
 
-        $this->withExceptionHandling();
-        $this->expectException(WebshopappApiException::class);
+        $this->expectException(ErrorException::class);
         $this->expectExceptionMessage('Invalid login credentials.');
 
         LightspeedEcomApi::shouldReceive('account')
