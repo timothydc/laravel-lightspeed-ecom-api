@@ -30,7 +30,7 @@ Interaction works the same as the Lightspeed API.
 #### Authentication
 ``` php
 // change API language
-LightspeedEcomApi::setApiLanguage('en');
+LightspeedEcomApi::setLanguage('en');
 
 // change API key and secret
 LightspeedEcomApi::setCredentials('key', 'secret');
