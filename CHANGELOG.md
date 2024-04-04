@@ -6,6 +6,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [v1.6.0] - 2024-04-04
+### Added
+- Support Laravel 11 ([#12](https://github.com/timothydc/laravel-lightspeed-ecom-api/pull/12))
+
+## [v1.5.0] - 2023-02-26
+### Added
+- Support Laravel 10 ([#9](https://github.com/timothydc/laravel-lightspeed-ecom-api/pull/9) by @TVKe)
+
 ## [v1.4.0] - 2022-03-01
 ### Added
 - Support Laravel 9 ([#6](https://github.com/timothydc/laravel-lightspeed-ecom-api/pull/6) by @mvd81)
@@ -30,8 +38,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - All the things
 
-[Unreleased]: https://github.com/timothydc/laravel-lightspeed-ecom-api/compare/v1.4.0...HEAD
-[v1.3.0]: https://github.com/timothydc/laravel-lightspeed-ecom-api/compare/v1.3.0...v1.4.0
+[Unreleased]: https://github.com/timothydc/laravel-lightspeed-ecom-api/compare/v1.6.0...HEAD
+[v1.6.0]: https://github.com/timothydc/laravel-lightspeed-ecom-api/compare/v1.5.0...v1.6.0
+[v1.5.0]: https://github.com/timothydc/laravel-lightspeed-ecom-api/compare/v1.4.0...v1.5.0
+[v1.4.0]: https://github.com/timothydc/laravel-lightspeed-ecom-api/compare/v1.3.0...v1.4.0
 [v1.3.0]: https://github.com/timothydc/laravel-lightspeed-ecom-api/compare/v1.2.0...v1.3.0
 [v1.2.0]: https://github.com/timothydc/laravel-lightspeed-ecom-api/compare/v1.1.0...v1.2.0
 [v1.1.0]: https://github.com/timothydc/laravel-lightspeed-ecom-api/compare/v1.0.0...v1.1.0
