@@ -8,7 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [v1.6.0] - 2024-04-04
 ### Added
-- Support Laravel 11 ([#12](https://github.com/timothydc/laravel-lightspeed-ecom-api/pull/12)
+- Support Laravel 11 ([#12](https://github.com/timothydc/laravel-lightspeed-ecom-api/pull/12))
 
 ## [v1.5.0] - 2023-02-26
 ### Added
