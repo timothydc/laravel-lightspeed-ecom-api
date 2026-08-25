@@ -5,9 +5,24 @@ declare(strict_types=1);
 namespace TimothyDC\LightspeedEcomApi\Services;
 
 use Illuminate\Support\Carbon;
+use TimothyDC\LightspeedEcomApi\Services\Resources\QuantityDiscounts;
 
 class WebshopappApiClient extends \WebshopappApiClient
 {
+    /**
+     * Resource that is missing from the seoshop/seoshop-php client.
+     *
+     * @var QuantityDiscounts
+     */
+    public $quantityDiscounts;
+
+    public function __construct($apiServer, $apiKey, $apiSecret, $apiLanguage)
+    {
+        parent::__construct($apiServer, $apiKey, $apiSecret, $apiLanguage);
+
+        $this->quantityDiscounts = new QuantityDiscounts($this);
+    }
+
     public function create($url, $payload, $options = []): array
     {
         $result = parent::create($url, $payload, $options);
