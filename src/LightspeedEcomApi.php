@@ -4,6 +4,7 @@ namespace TimothyDC\LightspeedEcomApi;
 
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Facade;
+use TimothyDC\LightspeedEcomApi\Services\Resources\QuantityDiscounts;
 use WebshopappApiResourceAccount;
 use WebshopappApiResourceAccountMetafields;
 use WebshopappApiResourceAccountPermissions;
@@ -173,6 +174,7 @@ use WebshopappApiResourceWebhooks;
  * @method static WebshopappApiResourceProductsImages productsImages()
  * @method static WebshopappApiResourceProductsMetafields productsMetafields()
  * @method static WebshopappApiResourceProductsRelations productsRelations()
+ * @method static QuantityDiscounts quantityDiscounts()
  * @method static WebshopappApiResourceQuotes quotes()
  * @method static WebshopappApiResourceQuotesConvert quotesConvert()
  * @method static WebshopappApiResourceQuotesPaymentmethods quotesPaymentmethods()
