@@ -23,7 +23,7 @@ class WebshopappApiClient extends \WebshopappApiClient
         $this->quantityDiscounts = new QuantityDiscounts($this);
     }
 
-    public function create($url, $payload, $options = []): array
+    public function create($url, $payload, $options = [])
     {
         $result = parent::create($url, $payload, $options);
 
@@ -32,7 +32,14 @@ class WebshopappApiClient extends \WebshopappApiClient
         return $result;
     }
 
-    public function read($url, $params = []): array
+    /**
+     * @param string $url
+     * @param array  $params
+     *
+     * @return array|int Count endpoints return a bare int.
+     * @throws \WebshopappApiException
+     */
+    public function read($url, $params = [])
     {
         $result = parent::read($url, $params);
 
@@ -41,7 +48,15 @@ class WebshopappApiClient extends \WebshopappApiClient
         return $result;
     }
 
-    public function update($url, $payload, $options = []): array
+    /**
+     * @param string $url
+     * @param array  $payload
+     * @param array  $options
+     *
+     * @return array|int Count endpoints return a bare int.
+     * @throws \WebshopappApiException
+     */
+    public function update($url, $payload, $options = [])
     {
         $result = parent::update($url, $payload, $options);
 
@@ -50,7 +65,13 @@ class WebshopappApiClient extends \WebshopappApiClient
         return $result;
     }
 
-    public function delete($url): array
+    /**
+     * @param string $url
+     *
+     * @return array|null An empty response body yields null.
+     * @throws \WebshopappApiException
+     */
+    public function delete($url)
     {
         $result = parent::delete($url);
 
