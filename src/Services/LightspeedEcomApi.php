@@ -3,6 +3,7 @@
 namespace TimothyDC\LightspeedEcomApi\Services;
 
 use Illuminate\Support\Carbon;
+use TimothyDC\LightspeedEcomApi\Services\Resources\QuantityDiscounts;
 
 use WebshopappApiResourceAccount;
 use WebshopappApiResourceAccountMetafields;
@@ -465,6 +466,11 @@ class LightspeedEcomApi
     public function productsRelations(): WebshopappApiResourceProductsRelations
     {
         return $this->api->productsRelations;
+    }
+
+    public function quantityDiscounts(): QuantityDiscounts
+    {
+        return $this->api->quantityDiscounts;
     }
 
     public function quotes(): WebshopappApiResourceQuotes
