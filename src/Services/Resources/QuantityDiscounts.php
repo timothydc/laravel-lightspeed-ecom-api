@@ -94,10 +94,10 @@ class QuantityDiscounts
     /**
      * @param int $quantityDiscountId
      *
-     * @return array
+     * @return array|null
      * @throws WebshopappApiException
      */
-    public function delete($quantityDiscountId): array
+    public function delete($quantityDiscountId): ?array
     {
         return $this->client->delete('quantity_discounts/' . $quantityDiscountId);
     }
